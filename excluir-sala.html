@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
-
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/bootstrap.min.css" />
-
-
-</head>
 <body>
-
 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
@@ -32,53 +26,52 @@
 
 
 					<li><a href="lista-filmes.html">Filmes</a></li>
-					<li><a href="lista-sala.html">Salas</a></li>
+					<li><a href="lista-sala.html" class="btn">Salas</a></li>
 				</ul>
 			</div>
 
 		</div>
 	</nav>
 
-
 	<div class=" col-md-6 col-md-offset-3">
-		<h3>Sessões na sala: Rogue One</h3>
-
 		<table class="table table-hover ">
 			<thead>
 				<tr>
-					<th>Horário</th>
-					<th>Filme</th>
-					<th>Duração</th>
-					<th>Preço</th>
-
-					<th colspan="2" class="text-center">Ações</th>
-				</tr>
+					<th class="text-center">Nome</th>
+					<th class="text-center">Preço</th>
+					<th colspan="4" class="text-center">Ações</th>
 			</thead>
 			<tbody>
 				<tr>
-					<td>00:01</td>
-					<td>Rogue One</td>
-					<td>02:00</td>
-					<td>R$ 15.00</td>
-
-					<td><a href="excluir-sessao.html" class="btn btn-danger">Excluir</a>
-					</td>
+					<td class="text-center"></td>
+					<td class="text-center"></td>
+					<td class="col-md-1"></td>
+					<td class="col-md-1"></td>
+					<td></td>
+					<td></td>
 				</tr>
 			</tbody>
 		</table>
 		<div class="col-md-6 col-md-offset-3">
-			<a href="sessao.html"
-				class="btn btn-block btn-info">Nova</a>
+			<a href="sala.html" class="btn btn-block btn-info">Novo</a>
 		</div>
 	</div>
-	<script>
-            
 
-      
+	<script>
+            function excluir(id) {
+                var url = window.location.href;
+                $.ajax({
+                    url: "/admin/sala/" + id,
+                    type: 'DELETE',
+                    success: function (result) {
+                        console.log(result);
+                        window.location.href = url;
+                    }
+                });
+            }
+
         </script>
 
-	<script type="text/javascript" src="/assets/js/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
-</body>
 
+</body>
 </html>

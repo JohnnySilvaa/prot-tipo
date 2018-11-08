@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+	<div class=" col-md-6 col-md-offset-3">
+
+		<h3>Nova sessão para sala: Rogue One</h3>
+
+		<form action='sessao-lista.html' method="post">
+			<input type="hidden" name="id" value=""> <input
+				type="hidden" name="salaId" value="">
+
+			<div class="form-group">
+				<label for="horario">Horario:</label> <input id="horario"
+					type="text" name="horario" class="form-control"
+					value="">
+
+			</div>
+
+			<div class="form-group">
+				<label for="filme">Filme:</label> <select id="filme" name="filmeId"
+					class="form-control">
+					<option value="">Selecione um Filme</option>
+					<option value="">Rogue One</option>
+				</select>
+			</div>
+
+
+			<button type="submit" class="btn btn-primary">Gravar</button>
+		</form>
+	</div>
+</body>
+</html>

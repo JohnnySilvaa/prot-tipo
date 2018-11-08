@@ -12,6 +12,33 @@
 </head>
 <body>
 
+
+<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Ingresso</a>
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+
+
+					<li><a href="lista-filmes.html">Filmes</a></li>
+					<li><a onclick="onload()" class="btn">Salas</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
 	<div class=" col-md-6 col-md-offset-3">
 		<table class="table table-hover ">
 			<thead>
@@ -30,34 +57,27 @@
 							Sessões
 					</a></td>
 					<td class="col-md-1"><a
-						href="/admin//sala/${sala.id}/lugares/" class="btn btn-warning">
+						href="lista-lugares.html" class="btn btn-warning">
 							<span class="glyphicon glyphicon-th" aria-hidden="true"></span>
 							Lugares
 					</a></td>
-					<td><a onclick="excluir(${sala.id})" class="btn btn-danger">Excluir</a>
+					<td><a href="excluir-sala.html" class="btn btn-danger">Excluir</a>
 					</td>
-					<td><a href="/admin/sala/${sala.id}" class="btn btn-info">Alterar</a>
+					<td><a href="sala.html" class="btn btn-info">Alterar</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 		<div class="col-md-6 col-md-offset-3">
-			<a href="/admin/sala" class="btn btn-block btn-info">Novo</a>
+			<a href="sala.html" class="btn btn-block btn-info">Novo</a>
 		</div>
 	</div>
+	
 	<script>
-            function excluir(id) {
-                var url = window.location.href;
-                $.ajax({
-                    url: "/admin/sala/" + id,
-                    type: 'DELETE',
-                    success: function (result) {
-                        console.log(result);
 
-                        window.location.href = url;
-                    }
-                });
-            }
+            function onload(){
+            	$.ajax({ window:location.href=lista-sessao.html });
+                }
         </script>
 
 </body>
