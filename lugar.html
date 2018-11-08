@@ -8,27 +8,52 @@
 </head>
 <body>
 
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Ingresso</a>
+			</div>
 
-		<div class=" col-md-6 col-md-offset-3">
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+
+
+					<li><a href="lista-filmes.html">Filmes</a></li>
+					<li><a href="lista-sala.html">Salas</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
+	<div class=" col-md-6 col-md-offset-3">
 		<form action="lista-lugares.html" method="post">
-			<input type="hidden" name="id" value="${lugarDto.id}">
-			<input type="hidden" name="salaId" value="${lugarDto.salaId}">
+			<input type="hidden" name="id" value="${lugarDto.id}"> <input
+				type="hidden" name="salaId" value="${lugarDto.salaId}">
 
 			<div class="form-group">
-	            <label for="fileira">Fileira:</label>
-	            <input id="fileira" type="text" name="fileira" class="form-control" value="">
-        	</div>
+				<label for="fileira">Fileira:</label> <input id="fileira"
+					type="text" name="fileira" class="form-control" value="">
+			</div>
 			<div class="form-group">
-	            <label for="posicao">Posicao:</label>
-	            <input id="posicao" type="text" name="posicao" class="form-control" value="">
-        	</div>
+				<label for="posicao">Posicao:</label> <input id="posicao"
+					type="text" name="posicao" class="form-control" value="">
+			</div>
 
 
 			<div class="form-group">
-         		<button type="submit" class="btn btn-primary">Gravar</button>
+				<button type="submit" class="btn btn-primary">Gravar</button>
 			</div>
 		</form>
-		</div>
+	</div>
 
 
 

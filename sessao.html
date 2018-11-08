@@ -7,18 +7,43 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
 <body>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Ingresso</a>
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+
+
+					<li><a href="lista-filmes.html">Filmes</a></li>
+					<li><a href="lista-sala.html" class="btn">Salas</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
 	<div class=" col-md-6 col-md-offset-3">
 
 		<h3>Nova sessão para sala: Rogue One</h3>
 
 		<form action='sessao-lista.html' method="post">
-			<input type="hidden" name="id" value=""> <input
-				type="hidden" name="salaId" value="">
+			<input type="hidden" name="id" value=""> <input type="hidden"
+				name="salaId" value="">
 
 			<div class="form-group">
 				<label for="horario">Horario:</label> <input id="horario"
-					type="text" name="horario" class="form-control"
-					value="">
+					type="text" name="horario" class="form-control" value="">
 
 			</div>
 
