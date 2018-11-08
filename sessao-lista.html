@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Ingresso</a>
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+
+
+					<li><a href="/admin/filmes">Filmes</a></li>
+					<li><a href="/admin/salas">Salas</a></li>
+			</div>
+
+		</div>
+	</nav>
+	
+	
+		<div class=" col-md-6 col-md-offset-3">
+        <h3>Sessões na sala: Rogue One</h3>
+
+        <table class="table table-hover ">
+            <thead>
+            <tr>
+                <th>Horário</th>
+                <th>Filme</th>
+                <th>Duração</th>
+                 <th>Preço</th>
+
+                <th colspan="2" class="text-center">Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="sessao" items="${sessoes}">
+                <tr>
+                    <td>00:01</td>
+                    <td>Rogue One</td>
+                    <td>02:00</td>
+                    <td>R$ 15.00</td>
+
+                    <td>
+                        <a onclick="excluir(${sessao.id})" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+        <div class="col-md-6 col-md-offset-3">
+            <a href="/admin/sessao?salaId=${sala.id}" class="btn btn-block btn-info">Nova</a>
+        </div>
+		</div>
+        <script>
+            function excluir(id) {
+                var url = window.location.href;
+                $.ajax({
+                    url:"/admin/sessao/" + id,
+                    type: 'DELETE',
+                    success: function (result) {
+                        console.log(result);
+
+                        window.location.href = url;
+                    }
+                });
+            }
+        </script>
+		
+	<script type="text/javascript" src="/assets/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    </body>
+
+</html>
